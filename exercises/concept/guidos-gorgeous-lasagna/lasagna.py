@@ -8,11 +8,13 @@ of a module and its functions and/or classes.
 """
 
 
-#TODO: define your EXPECTED_BAKE_TIME (required) and PREPARATION_TIME (optional) constants below.
+EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 2
 
 
-#TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
-def bake_time_remaining():
+def bake_time_remaining(elapsed_bake_time):
+    """Return remaining bake time (in minutes)."""
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
     """Calculate the bake time remaining.
 
     :param elapsed_bake_time: int - baking time already elapsed.
@@ -26,14 +28,18 @@ def bake_time_remaining():
     pass
 
 
-#TODO: Define the 'preparation_time_in_minutes()' function below.
+def preparation_time_in_minutes(number_of_layers):
+    """Return preparation time (in minutes) given number of layers."""
+    return number_of_layers * PREPARATION_TIME
 # To avoid the use of magic numbers (see: https://en.wikipedia.org/wiki/Magic_number_(programming)), you should define a PREPARATION_TIME constant.
 # You can do that on the line below the 'EXPECTED_BAKE_TIME' constant.
 # This will make it easier to do calculations, and make changes to your code.
 
 
 
-#TODO: define the 'elapsed_time_in_minutes()' function below.
+def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
+    """Return total cooking time (prep + elapsed bake time in minutes)."""
+    return preparation_time_in_minutes(number_of_layers) + elapsed_bake_time
 
 
 
